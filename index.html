@@ -20,18 +20,18 @@
                 </div>
                 <a class="link" href="admin.html">دخول الأدمن</a>
             </div>
-            <!-- رقم الغرفة في المنتصف -->
-            <div class="hero-center" style="text-align:center;margin-top:14px;">
-                <!-- رقم الغرفة تحت العنوان مباشرة في المنتصف -->
-                <div id="heroRoomBadge" style="display:none">
-                    <div class="room-badge">
-                        <span class="room-badge-label">رقم الغرفة</span>
-                        <span class="room-badge-sep">|</span>
-                        <span class="room-badge-num" id="heroRoomNum">—</span>
-                    </div>
-                </div>
-            </div>
         </section>
+
+        <!-- ✅ رقم الغرفة خارج البانل البنفسجي، تحت الهيدر مباشرة -->
+        <div id="pageRoomBadge" style="display:none;justify-content:center;margin:14px 0 2px;">
+            <div class="page-room-badge">
+                <span class="page-room-label">رقم الغرفة</span>
+                <span class="page-room-sep">|</span>
+                <span class="page-room-num" id="pageRoomNum">—</span>
+            </div>
+        </div>
+
+        <input type="hidden" id="room">
         <section class="grid" id="services"></section>
     </main>
 
@@ -47,7 +47,6 @@
                 </div>
                 <button class="xbtn" onclick="closeModal()" title="إغلاق">×</button>
             </div>
-            <input type="hidden" id="room">
             <div id="dynamicA"></div>
             <div id="dynamicB"></div>
             <label>ملاحظات إضافية</label>

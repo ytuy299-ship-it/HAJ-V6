@@ -113,7 +113,7 @@ const menuData = {
   ]
 };
 
-// ستاربكس – Tall و Grande فقط
+// ستاربكس
 const starbucksData = [
   { group: 'المشروبات الساخنة', items: [
     { label: 'أمريكانو',        subs: ['Tall وسط','Grande كبير'] },
@@ -149,7 +149,7 @@ const templates = {
     match: ['الأكل','Food'],
     hint: 'اختر مصدر الطلب ثم حدد أصنافك',
     buildA: () => buildFoodUI(),
-    b: `<label>وقت التوصيل المفضل</label><input id="time" type="time">`
+    b: '' // ✅ حذف وقت التوصيل
   },
   laundry: {
     match: ['غسيل','Laundry'],
@@ -227,17 +227,17 @@ function selectMenuSource(source) {
 
 // ─── تصنيفات المطعم ───────────────────────────────────────────────────────────
 const restaurantCategories = [
-  { key:'فطور',      label:'الإفطار',           emoji:'🍳', img:'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&q=80', color:'#f59e42' },
-  { key:'مخبوزات',  label:'المخبوزات',          emoji:'🥐', img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80', color:'#d4a96a' },
-  { key:'مقبلات',   label:'المقبلات',           emoji:'🥗', img:'https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&q=80', color:'#6bb86f' },
-  { key:'سلطات',    label:'السلطات',            emoji:'🥙', img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80', color:'#82c96e' },
-  { key:'ساندوتشات',label:'الساندوتشات',        emoji:'🥪', img:'https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400&q=80', color:'#e8935a' },
-  { key:'مكرونة',   label:'المكرونة والبيتزا',  emoji:'🍕', img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', color:'#e05c5c' },
-  { key:'ارز',      label:'الأرز',              emoji:'🍚', img:'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400&q=80', color:'#c8a96e' },
-  { key:'رئيسية',   label:'الأطباق الرئيسية',   emoji:'🍖', img:'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80', color:'#b05a2a' },
-  { key:'نباتية',   label:'الأطباق النباتية',   emoji:'🥦', img:'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=80', color:'#4caf6f' },
-  { key:'حلويات',   label:'الحلويات',           emoji:'🍰', img:'https://images.unsplash.com/photo-1464195244916-405fa0a82545?w=400&q=80', color:'#e878aa' },
-  { key:'مشروبات',  label:'المشروبات',          emoji:'☕', img:'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80', color:'#7b68c8' }
+  { key:'فطور',      label:'الإفطار',           img:'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&q=80', color:'#f59e42', labelBg:'linear-gradient(135deg,#f59e42,#e07a10)' },
+  { key:'مخبوزات',  label:'المخبوزات',          img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80', color:'#d4a96a', labelBg:'linear-gradient(135deg,#d4a96a,#b07830)' },
+  { key:'مقبلات',   label:'المقبلات',           img:'https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&q=80', color:'#6bb86f', labelBg:'linear-gradient(135deg,#6bb86f,#3a8a3e)' },
+  { key:'سلطات',    label:'السلطات',            img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80', color:'#82c96e', labelBg:'linear-gradient(135deg,#82c96e,#4a9a38)' },
+  { key:'ساندوتشات',label:'الساندوتشات',        img:'https://images.unsplash.com/photo-1553909489-cd47e0907980?w=400&q=80', color:'#e8935a', labelBg:'linear-gradient(135deg,#e8935a,#c05a20)' },
+  { key:'مكرونة',   label:'المكرونة والبيتزا',  img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', color:'#e05c5c', labelBg:'linear-gradient(135deg,#e05c5c,#a82020)' },
+  { key:'ارز',      label:'الأرز',              img:'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400&q=80', color:'#c8a96e', labelBg:'linear-gradient(135deg,#c8a96e,#946830)' },
+  { key:'رئيسية',   label:'الأطباق الرئيسية',   img:'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80', color:'#b05a2a', labelBg:'linear-gradient(135deg,#b05a2a,#7a2e00)' },
+  { key:'نباتية',   label:'الأطباق النباتية',   img:'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=80', color:'#4caf6f', labelBg:'linear-gradient(135deg,#4caf6f,#1a7a3a)' },
+  { key:'حلويات',   label:'الحلويات',           img:'https://images.unsplash.com/photo-1464195244916-405fa0a82545?w=400&q=80', color:'#e878aa', labelBg:'linear-gradient(135deg,#e878aa,#b03070)' },
+  { key:'مشروبات',  label:'المشروبات',          img:'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80', color:'#7b68c8', labelBg:'linear-gradient(135deg,#7b68c8,#4a2a98)' }
 ];
 
 function renderRestaurantCategories() {
@@ -248,8 +248,7 @@ function renderRestaurantCategories() {
           <div class="cat-card-img" style="background-image:url('${c.img}')"></div>
           <div class="cat-card-overlay"></div>
           <div class="cat-card-content">
-            <span class="cat-card-emoji">${c.emoji}</span>
-            <span class="cat-card-label">${c.label}</span>
+            <span class="cat-card-label" style="background:${c.labelBg}">${c.label}</span>
           </div>
         </button>
       `).join('')}
@@ -259,7 +258,6 @@ function renderRestaurantCategories() {
       <div class="cat-panel-header" id="catPanelHeader">
         <button class="cat-panel-close" onclick="closeCatPanel()">✕</button>
         <span class="cat-panel-title" id="catPanelTitle"></span>
-        <span class="cat-panel-emoji" id="catPanelEmoji"></span>
       </div>
       <div class="cat-panel-body" id="catPanelBody"></div>
     </div>
@@ -272,7 +270,6 @@ function selectFoodCat(idx) {
   const backdrop = $('catPanelBackdrop');
   const currentIdx = panel.dataset.openIdx;
 
-  // toggle close if same
   if (currentIdx == idx && panel.style.display !== 'none') {
     closeCatPanel();
     return;
@@ -282,8 +279,7 @@ function selectFoodCat(idx) {
   $(`catbtn_${idx}`).classList.add('active');
 
   $('catPanelTitle').textContent = cat.label;
-  $('catPanelEmoji').textContent = cat.emoji;
-  $('catPanelHeader').style.background = `linear-gradient(135deg, ${cat.color}dd, ${cat.color}99)`;
+  $('catPanelHeader').style.background = cat.labelBg;
 
   const key = cat.key;
   const items = menuData[key] || [];
@@ -314,22 +310,7 @@ function closeCatPanel() {
   }, 300);
 }
 
-// مستوى ثانٍ: groups منسدلة (مثل الفطور الحجازي / الإنجليزي...)
-function renderSubCatLevel(groups, nsPrefix) {
-  return `<div class="sub-cat-grid">
-    ${groups.map((g, i) => `
-      <button class="sub-cat-btn" id="${nsPrefix}_sbtn_${i}" onclick="selectSubCat('${nsPrefix}',${i},${JSON.stringify(groups).split('').map(c=>c.charCodeAt(0) > 127 ? '\\u'+('0000'+c.charCodeAt(0).toString(16)).slice(-4) : c).join('')})">
-        <span>${g.group}</span>
-        <span class="cat-arrow">▾</span>
-      </button>
-      <div class="sub-cat-items-wrapper" id="${nsPrefix}_sbox_${i}" style="display:none"></div>
-    `).join('')}
-  </div>`;
-}
-
-// نظراً لأن تمرير JSON داخل onclick معقد، نستخدم data-attribute بدل ذلك
 function renderSubCatLevelV2(groups, nsPrefix) {
-  // نحفظ بيانات الـ groups في window مؤقتاً
   window['_groups_' + nsPrefix] = groups;
   return `<div class="sub-cat-grid">
     ${groups.map((g, i) => `
@@ -348,7 +329,6 @@ function selectSubCat(nsPrefix, idx) {
   if (!box || !btn) return;
   const isOpen = box.style.display !== 'none';
 
-  // أغلق كل sub boxes تحت نفس الـ prefix
   document.querySelectorAll(`[id^="${nsPrefix}_sbox_"]`).forEach(w => w.style.display = 'none');
   document.querySelectorAll(`[id^="${nsPrefix}_sbtn_"]`).forEach(b => b.classList.remove('active'));
 
@@ -362,7 +342,6 @@ function selectSubCat(nsPrefix, idx) {
   box.innerHTML = renderFlatItems(items, nsPrefix + '_' + idx);
 }
 
-// عرض العناصر مع ترتيب: المتفرعة أولاً ثم البسيطة
 function renderFlatItems(items, nsPrefix) {
   const withSubs = items.filter(i => typeof i !== 'string' && !i.group && i.subs);
   const simple   = items.filter(i => typeof i === 'string');
@@ -370,17 +349,13 @@ function renderFlatItems(items, nsPrefix) {
   return `<div class="food-options">${ordered.map((item, i) => makeFoodItem(item, nsPrefix + '_' + i)).join('')}</div>`;
 }
 
-// ─── صنع عنصر طعام ───────────────────────────────────────────────────────────
-// nsPrefix+index يُستخدم كـ id فريد بدل الاعتماد على النص العربي
 function makeFoodItem(item, uid) {
   if (typeof item === 'string') {
     return makeSingleItem(item, item, uid, false);
   }
   if (item.group) {
-    // لن يُستدعى مباشرة هنا لكن للأمان
     return renderFlatItems(item.items || [], uid);
   }
-  // صنف متفرع
   const { label, subs } = item;
   return `<div class="food-group">
     <button type="button" class="food-group-trigger" id="ftrig_${uid}" onclick="toggleGroup('${uid}')">
@@ -510,9 +485,10 @@ function applyRoomFromQR() {
   if (room) {
     $('room').value       = room.id;
     $('room').dataset.num = room.room_num;
-    const badge = $('heroRoomBadge');
-    const numEl = $('heroRoomNum');
-    if (badge && numEl) { numEl.textContent = room.room_num; badge.style.display = 'block'; }
+    // ✅ رقم الغرفة يظهر تحت البانل البنفسجي
+    const badge = $('pageRoomBadge');
+    const numEl = $('pageRoomNum');
+    if (badge && numEl) { numEl.textContent = room.room_num; badge.style.display = 'flex'; }
     toast('تم تحديد غرفة ' + room.room_num + ' ✅');
   }
 }
@@ -531,7 +507,6 @@ function openService(id) {
   $('notes').value = '';
   $('modal').classList.add('show');
 
-  // تطبيق حد الـ 10 دقائق للقولف والنظافة
   if (t.hasTimeLimit) {
     setTimeout(applyTimeLimit, 50);
   }
@@ -567,7 +542,6 @@ async function sendRequest() {
   if (t.buildA && Object.keys(selectedItems).length === 0)
     return toast('الرجاء اختيار صنف واحد على الأقل');
 
-  // التحقق من الوقت للقولف والنظافة
   if (t.hasTimeLimit) {
     const timeInput = $('time');
     if (timeInput && timeInput.value < timeInput.min) {
