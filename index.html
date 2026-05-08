@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>خدمات الحج</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+</head>
+<body>
+    <div class="toast" id="toast"></div>
+    <main class="wrap">
+        <section class="hero header-hero">
+            <!-- السطر الأول: لوجو + عنوان وسط + أدمن -->
+            <div class="hero-topbar" style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;margin-bottom:0;">
+                <img src="R.png" class="logo">
+                <div style="text-align:center;">
+                    <h1 style="margin:0;font-size:36px;color:#fff;">خدمات الحج</h1>
+                </div>
+                <a class="link" href="admin.html">دخول الأدمن</a>
+            </div>
+            <!-- رقم الغرفة في المنتصف -->
+            <div class="hero-center" style="text-align:center;margin-top:14px;">
+                <!-- رقم الغرفة تحت العنوان مباشرة في المنتصف -->
+                <div id="heroRoomBadge" style="display:none">
+                    <div class="room-badge">
+                        <span class="room-badge-label">رقم الغرفة</span>
+                        <span class="room-badge-sep">|</span>
+                        <span class="room-badge-num" id="heroRoomNum">—</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="grid" id="services"></section>
+    </main>
+
+    <div class="modal" id="modal">
+        <div class="modal-card">
+            <div class="top">
+                <div class="modal-title">
+                    <span class="big" id="mIcon"></span>
+                    <div>
+                        <h2 id="mTitle" style="margin:0"></h2>
+                        <p class="muted" id="mHint" style="margin:4px 0 0"></p>
+                    </div>
+                </div>
+                <button class="xbtn" onclick="closeModal()" title="إغلاق">×</button>
+            </div>
+            <input type="hidden" id="room">
+            <div id="dynamicA"></div>
+            <div id="dynamicB"></div>
+            <label>ملاحظات إضافية</label>
+            <textarea id="notes" placeholder="اكتبي أي تفاصيل إضافية هنا"></textarea>
+            <br><br>
+            <button class="btn" onclick="sendRequest()">إرسال الطلب الآن</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
