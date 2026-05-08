@@ -673,20 +673,28 @@ table{width:100%;border-collapse:separate;border-spacing:0 10px}th{text-align:ri
 .cat-panel-backdrop {
   position: fixed;
   inset: 0;
-  background: transparent; /* ← أصبح شفافاً بالكامل */
+  background: rgba(0,0,0,.35);
   z-index: 900;
   opacity: 0;
   transition: opacity .3s;
-  pointer-events: none; /* يسمح بالتفاعل مع العناصر خلفه إذا لزم */
 }
-.cat-panel-backdrop {
-  background: transparent !important;  /* ← لا يحجب الرؤية */
-}
+.cat-panel-backdrop.open { opacity: 1; }
 
 .cat-panel {
-  background: rgba(255, 255, 255, 0.55) !important;  /* ← شفافية متوسطة */
-  backdrop-filter: blur(14px);  /* تأثير زجاجي ناعم */
-  -webkit-backdrop-filter: blur(14px);
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  z-index: 901;
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 28px 28px 0 0;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform .3s cubic-bezier(.32,1,.45,1);
+  box-shadow: 0 -8px 40px rgba(0,0,0,.18);
 }
 .cat-panel.open { transform: translateY(0); }
 
